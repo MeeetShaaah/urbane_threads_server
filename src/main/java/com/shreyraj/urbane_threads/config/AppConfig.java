@@ -27,7 +27,8 @@ public class AppConfig {
                 .authorizeHttpRequests(Authorize -> Authorize
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll())
-                .csrf().disable()
+                        .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
+                        .csrf().disable()
                 .cors().configurationSource(new CorsConfigurationSource() {
 
                     @Override
@@ -59,6 +60,7 @@ public class AppConfig {
 
     }
 
+    // add password encodder 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
