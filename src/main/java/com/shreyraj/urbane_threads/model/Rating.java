@@ -11,8 +11,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "rating")
 public class Rating {
 
@@ -33,9 +35,6 @@ public class Rating {
     
     private LocalDateTime createdAt;
 
-    public Rating() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public Rating(Long id, User user, Product product, double rating, LocalDateTime createdAt) {
 		super();
