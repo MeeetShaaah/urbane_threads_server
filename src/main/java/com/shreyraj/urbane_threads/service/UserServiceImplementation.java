@@ -23,6 +23,7 @@ public class UserServiceImplementation implements UserService {
 		
 	}
 
+	@SuppressWarnings("null")
 	@Override
 	public User findUserById(Long userId) throws UserException {
 		Optional<User> user=userRepository.findById(userId);
