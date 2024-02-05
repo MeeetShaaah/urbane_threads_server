@@ -24,59 +24,58 @@ import jakarta.persistence.OneToMany;
 public class Product {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @Column(name = "title")
-    private String title;
+	@Column(name = "title")
+	private String title;
 
-    @Column(name = "description")
-    private String description;
+	@Column(name = "description")
+	private String description;
 
-    @Column(name = "price")
-    private int price;
+	@Column(name = "price")
+	private int price;
 
-    @Column(name = "discounted_price")
-    private int discountedPrice;
-    
-    @Column(name="discount_persent")
-    private int discountPersent;
+	@Column(name = "discounted_price")
+	private int discountedPrice;
 
-    @Column(name = "quantity")
-    private int quantity;
+	@Column(name = "discount_persent")
+	private int discountPersent;
 
-    @Column(name = "brand")
-    private String brand;
+	@Column(name = "quantity")
+	private int quantity;
 
-    @Column(name = "color")
-    private String color;
+	@Column(name = "brand")
+	private String brand;
 
-    @Embedded
-    @ElementCollection
-    @Column(name = "sizes")
-    private Set<Size> sizes=new HashSet<>();
+	@Column(name = "color")
+	private String color;
 
-    @Column(name = "image_url")
-    private String imageUrl;
+	@Embedded
+	@ElementCollection
+	@Column(name = "sizes")
+	private Set<Size> sizes = new HashSet<>();
 
-    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Rating>ratings=new ArrayList<>();
-    
-    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Review>reviews=new ArrayList<>();
+	@Column(name = "image_url")
+	private String imageUrl;
 
-    @Column(name = "num_ratings")
-    private int numRatings;
-    
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Rating> ratings = new ArrayList<>();
 
-    @ManyToOne()
-    @JoinColumn(name="category_id")
-    private Category category;
-    
-    private LocalDateTime createdAt;
-    
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Review> reviews = new ArrayList<>();
+
+	@Column(name = "num_ratings")
+	private int numRatings;
+
+	@ManyToOne()
+	@JoinColumn(name = "category_id")
+	private Category category;
+
+	private LocalDateTime createdAt;
+
 	public Product() {
-		
+
 	}
 
 	public Product(Long id, String title, String description, int price, int discountedPrice, int discountPersent,
@@ -108,6 +107,7 @@ public class Product {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
+
 	public List<Rating> getRatings() {
 		return ratings;
 	}
@@ -252,7 +252,4 @@ public class Product {
 				&& Objects.equals(sizes, other.sizes) && Objects.equals(title, other.title);
 	}
 
-	
-
-   
 }

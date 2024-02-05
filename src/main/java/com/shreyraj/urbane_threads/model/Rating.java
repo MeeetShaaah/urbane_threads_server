@@ -18,23 +18,22 @@ import lombok.NoArgsConstructor;
 @Table(name = "rating")
 public class Rating {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", nullable = false)
+	private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id", nullable = false)
+	private Product product;
 
-    @Column(name = "rating")
-    private double rating;
-    
-    private LocalDateTime createdAt;
+	@Column(name = "rating")
+	private double rating;
 
+	private LocalDateTime createdAt;
 
 	public Rating(Long id, User user, Product product, double rating, LocalDateTime createdAt) {
 		super();
@@ -84,8 +83,5 @@ public class Rating {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
-
-  
-
 
 }

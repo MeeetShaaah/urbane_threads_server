@@ -27,7 +27,7 @@ public class User {
 
     @Column(name = "first_name")
     private String firstName;
-    
+
     @Column(name = "last_name")
     private String lastName;
 
@@ -37,29 +37,27 @@ public class User {
     @Column(name = "email")
     private String email;
 
-//    @Enumerated(EnumType.STRING)
+    // @Enumerated(EnumType.STRING)
     private String role;
-    
+
     private String mobile;
 
-    
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Address> addresses=new ArrayList<>();
+    private List<Address> addresses = new ArrayList<>();
 
     @Embedded
     @ElementCollection
-    @CollectionTable(name="payment_information",joinColumns = @JoinColumn(name="user_id"))
-    private List<PaymentInformation> paymentInformation=new ArrayList<>();
+    @CollectionTable(name = "payment_information", joinColumns = @JoinColumn(name = "user_id"))
+//    private List<PaymentInformation> paymentInformation = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Rating>ratings=new ArrayList<>();
-    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Rating> ratings = new ArrayList<>();
+
     @JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Review>reviews=new ArrayList<>();
-    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews = new ArrayList<>();
+
     private LocalDateTime createdAt;
 
-    
 }
