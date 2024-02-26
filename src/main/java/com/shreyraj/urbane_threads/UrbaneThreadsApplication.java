@@ -13,10 +13,6 @@ import io.swagger.v3.oas.annotations.info.License;
 		title="Ecommerce Project Api With Springboot",
 		description="Welcome to the documentation for the eCommerce Project API! This API provides a set of endpoints and functionalities to interact with our eCommerce platform programmatically. With this API, you can build applications, integrations, and automate various tasks related to our online store.",
 		version="v1",
-		contact=@Contact(
-				name="Code With ShreyRaj",
-				email="meetshah7199@gmail.com"
-				),
 		license=@License(
 				name="© Code With ShreyRaj"
 				)

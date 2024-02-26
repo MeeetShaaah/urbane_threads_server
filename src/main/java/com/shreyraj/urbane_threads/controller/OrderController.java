@@ -33,11 +33,11 @@ public class OrderController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<Order> createOrderHandler(@RequestBody Address spippingAddress,
+	public ResponseEntity<Order> createOrderHandler(@RequestBody Address shippingAddress,
 			@RequestHeader("Authorization")String jwt) throws UserException{
 
 		User user=userService.findUserProfileByJwt(jwt);
-		Order order =orderService.createOrder(user, spippingAddress);
+		Order order =orderService.createOrder(user, shippingAddress);
 
 		return new ResponseEntity<Order>(order,HttpStatus.OK);
 
