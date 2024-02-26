@@ -6,15 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shreyraj.urbane_threads.response.ApiResponse;
+import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 public class HomeController {
 
+//	@GetMapping("/")
+//	public ResponseEntity<ApiResponse> homeController(){
+//
+//		ApiResponse res=new ApiResponse("Welcome To E-Commerce System", true);
+//
+//		return new ResponseEntity<>(res,HttpStatus.OK);
+//	}
+
 	@GetMapping("/")
-	public ResponseEntity<ApiResponse> homeController(){
-
-		ApiResponse res=new ApiResponse("Welcome To E-Commerce System", true);
-
-		return new ResponseEntity<>(res,HttpStatus.OK);
+	public RedirectView redirectToSwaggerUI() {
+		return new RedirectView("/swagger-ui/index.html");
 	}
 }
