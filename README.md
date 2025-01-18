@@ -53,6 +53,103 @@ Urban Thread uses JWT (JSON Web Tokens) for secure authentication. To access pro
 1. Obtain a JWT token by logging in
 2. Include the token in the Authorization header for subsequent requests
 
+## 🔌 API Endpoints
+
+### Admin 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/admin/orders`        | Get all orders                  |
+| `GET`  | `/admin/orders/{id}`   | Get specific order details      |
+| `POST` | `/admin/orders`        | Create a new order              |
+| `PUT`  | `/admin/orders/{id}`   | Update order details            |
+| `DELETE` | `/admin/orders/{id}` | Delete an order                 |
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/admin/products`      | Get all products                |
+| `GET`  | `/admin/products/{id}` | Get specific product details    |
+| `POST` | `/admin/products`      | Add a new product               |
+| `PUT`  | `/admin/products/{id}` | Update product details          |
+| `DELETE` | `/admin/products/{id}`| Delete a product               |
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/admin/users`         | Get all users                   |
+| `GET`  | `/admin/users/{id}`    | Get specific user details       |
+| `POST` | `/admin/users`         | Add a new user                  |
+| `PUT`  | `/admin/users/{id}`    | Update user details             |
+| `DELETE` | `/admin/users/{id}`   | Delete a user                   |
+
+### Authentication 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `POST` | `/auth/login`          | Login a user                    |
+| `POST` | `/auth/register`       | Register a new user             |
+| `POST` | `/auth/logout`         | Logout a user                   |
+
+### Cart 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/cart`                | Get the current user's cart     |
+| `POST` | `/cart`                | Add item to the cart            |
+| `DELETE` | `/cart/{id}`          | Remove item from the cart       |
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/cart/items`          | Get all items in the cart       |
+| `POST` | `/cart/items`          | Add item to cart                |
+| `DELETE` | `/cart/items/{id}`    | Remove item from the cart       |
+
+### Order 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/orders`              | Get all orders for the user     |
+| `GET`  | `/orders/{id}`         | Get specific order details      |
+| `POST` | `/orders`              | Create a new order              |
+| `PUT`  | `/orders/{id}`         | Update order details            |
+| `DELETE` | `/orders/{id}`        | Cancel or delete an order       |
+
+### Payment 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `POST` | `/payments`            | Make a payment for an order     |
+| `GET`  | `/payments/{id}`       | Get payment details for an order|
+
+### Rating 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `POST` | `/ratings`             | Add a rating for a product      |
+| `GET`  | `/ratings/{productId}` | Get all ratings for a product   |
+
+### Review 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `POST` | `/reviews`             | Add a review for a product      |
+| `GET`  | `/reviews/{productId}` | Get all reviews for a product   |
+
+### User 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/users/{id}`          | Get user details                |
+| `PUT`  | `/users/{id}`          | Update user details             |
+| `DELETE` | `/users/{id}`         | Delete a user                   |
+
+### User Product 
+
+| Method | Endpoint              | Description                     |
+|--------|-----------------------|---------------------------------|
+| `GET`  | `/user/products`       | Get products viewed or purchased by the user |
+| `POST` | `/user/products`       | Add product to user's wish list or cart |
+
+
 ## 📚 API Documentation
 
 Access the Swagger UI for comprehensive API documentation:
